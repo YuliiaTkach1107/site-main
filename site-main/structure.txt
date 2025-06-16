@@ -1,0 +1,25 @@
+.
+├── assets
+│   └── css.css
+├── functions
+│   ├── gestion_authentification.php
+│   ├── gestion_bdd.php
+│   ├── gestion_navigation.php
+│   └── gestion_session.php
+├── includes
+│   ├── footer.php
+│   └── header.php
+├── index.php
+├── pages
+│   ├── connexion.php
+│   ├── contact.php
+│   ├── inscription.php
+│   └── profil.php
+├── structure.txt
+└── traitements
+    ├── traitement_connexion.php
+    ├── traitement_contact.php
+    ├── traitement_deconnexion.php
+    └── traitement_inscription.php
+
+6 directories, 17 files
