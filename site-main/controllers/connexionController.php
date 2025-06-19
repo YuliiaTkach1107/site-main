@@ -12,7 +12,7 @@ $pseudo = $_POST['connexion_pseudo'] ?? '';
 $valeurs = ['pseudo' => $pseudo];
 
 $erreurs=[];
-// Проверяем, что данные не пустые
+// Vérifier que les données ne sont pas vides
 if (!$pseudo) {
     $erreurs['pseudo'] = "Pseudo est requis.";
     exit;
@@ -43,6 +43,6 @@ if (empty($erreurs)) {
 $_SESSION['connexion_erreurs'] = $erreurs;
 $_SESSION['connexion_valeurs'] = $valeurs;
 
-// Возврат на страницу входа
+// Retour à la page de connexion 
 header('Location: ../pages/connexion.php');
 ?>
