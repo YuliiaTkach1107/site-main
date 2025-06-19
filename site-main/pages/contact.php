@@ -1,8 +1,9 @@
 <?php
 require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'functions' . DIRECTORY_SEPARATOR . 'gestionSession.php';
+require_once __DIR__. DIRECTORY_SEPARATOR . '..' .DIRECTORY_SEPARATOR .'includes'.DIRECTORY_SEPARATOR.'header.php';
 $pageTitre='Contact';
 $metaDescription="Page de contact. Vous pouvez nous écrire ici.";
-require_once __DIR__. DIRECTORY_SEPARATOR . '..' .DIRECTORY_SEPARATOR .'includes'.DIRECTORY_SEPARATOR.'header.php';
+
 initialiserSession();
 $erreurs = $_SESSION['formErreurs'] ?? [];
 $valeurs =  $_SESSION['formValeurs'] ?? [
@@ -11,7 +12,10 @@ $valeurs =  $_SESSION['formValeurs'] ?? [
     'email'  => '',
     'message'=> ''
 ];
-unset($_SESSION['formErreurs'], $_SESSION['formValeurs']);
+
+$formValide = $_SESSION['formValide'] ?? null;
+unset($_SESSION['formErreurs'], $_SESSION['formValeurs'],$_SESSION['formValide']);
+
 ?>
 <h2>Page de contact</h2>
 
@@ -55,7 +59,7 @@ unset($_SESSION['formErreurs'], $_SESSION['formValeurs']);
     </p>
     <button type="submit">Envoyer</button>
 
-    <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
+    <?php if (isset($formValide)): ?>
         <p class="message-flash <?= $formValide ? 'ok' : 'err' ?>">
             <?= $formValide ? 'Formulaire envoyé avec succès !' : 'Formulaire non envoyé !' ?>
         </p>
