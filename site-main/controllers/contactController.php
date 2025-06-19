@@ -9,7 +9,7 @@ $message = $_POST['message'] ?? '';
 
 $erreurs = [];
 
-// Валидация
+// Validation
 if (!$nom || strlen($nom) < 2 || strlen($nom) > 255) {
     $erreurs['nom'] = "Le nom doit contenir entre 2 et 255 caractères.";
 }
@@ -23,7 +23,7 @@ if (!$message || strlen($message) < 10 || strlen($message) > 3000) {
     $erreurs['message'] = "Le message doit contenir entre 10 et 3000 caractères.";
 }
 
-// Обработка
+// Traitement
 if (empty($erreurs)) {
     $to = 'ulatkachenko1107@gmail.com'; // ← замени на свою почту
 
@@ -59,9 +59,6 @@ exit;
     $_SESSION['formValeurs'] = $_POST;
     header('Location: ../pages/contact.php');
     exit;
-    /*echo "<p style='color: red;'> Le formulaire n'a pas été envoyé !</p>";
-    foreach ($erreurs as $champ => $msg) {
-        echo "<p><strong>$champ :</strong> $msg</p>";*/
     }
 
 
