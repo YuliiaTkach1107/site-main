@@ -1,7 +1,7 @@
 <?php 
 require_once __DIR__ .DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'config.php';
 function gestionNavigation(){
- // создаем массив навигации 
+ // Tableau de navigation 
  $pages = [
     "Accueil"=>BASE_URL . "/index.php",
     "Contact"=> BASE_URL . "/pages/contact.php",
@@ -12,7 +12,7 @@ function gestionNavigation(){
  echo '<ul>';
 foreach ($pages as $pageName =>$pageURL){
     $activeClass =($currentPage == basename($pageURL))?'class="active"':'';
-    // Выводим элемент списка с соответствующим классом для активной страницы
+    // Nous affichons l'element de liste avec la classe correspondante pour la page active 
     echo "<li $activeClass><a href=\"$pageURL\">$pageName</a></li>";
 
 }
