@@ -24,7 +24,7 @@ $stmt->execute(['id' => $utilisateurId]);
 $utilisateur = $stmt->fetch();
 
 if (!$utilisateur) {
-    // Пользователь не найден (что-то пошло не так)
+    // Utilisateur non trouvé
     echo "Utilisateur non trouvé";
     exit;
 }
